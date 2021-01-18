@@ -7,15 +7,15 @@ pipeline {
             }
         }
         stage('Send email') {
+            steps {
+                emailext body: '''${SCRIPT, template="groovy-html.template"}''',
+                            mimeType: 'text/html',
+                            subject: "Jenkins",
+                            to: "n.chambon84@gmail.com",
+                            replyTo: "n.chambon84@gmail.com",
+                            recipientProviders: [[$class: 'CulpritsRecipientProvider']]
+            }
 
-
-
-            emailext body: '''${SCRIPT, template="groovy-html.template"}''',
-                mimeType: 'text/html',
-                subject: "Jenkins",
-                to: "n.chambon84@gmail.com",
-                replyTo: "n.chambon84@gmail.com",
-                recipientProviders: [[$class: 'CulpritsRecipientProvider']]
         }
     }
 }
