@@ -40,8 +40,7 @@ pipeline {
         }
         stage('Send email') {
             steps {
-                emailext to: "n.chambon84@gmail.com",
-
+                emailext to: "n.chambon84@gmail.com"
             }
 
         }
