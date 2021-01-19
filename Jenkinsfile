@@ -40,7 +40,11 @@ pipeline {
         }
         stage('Send email') {
             steps {
-                emailext to: "n.chambon84@gmail.com"
+                emailext body: "Coucou",
+                            mimeType: 'text/html',
+                            subject: "Jenkins",
+                            to: "n.chambon84@gmail.com",
+                            replyTo: "n.chambon84@gmail.com"
             }
 
         }
