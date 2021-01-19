@@ -43,7 +43,7 @@ pipeline {
                 emailext body: "Coucou",
                             mimeType: 'text/html',
                             subject: "Jenkins",
-                            to: "n.chambon84@gmail.com",
+                            to: "djilalisaiah.sid@gmail.com",
                             replyTo: "n.chambon84@gmail.com"
             }
 
