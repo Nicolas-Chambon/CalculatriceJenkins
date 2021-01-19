@@ -19,8 +19,10 @@ pipeline {
         }
         stage('Send email') {
             steps {
-                emailext    to: "djilalisaiah.sid@gmail.com",
-                            replyTo: "n.chambon84@gmail.com"
+                emailext    body:"",
+                            subject:"",
+                            to: "djilalisaiah.sid@gmail.com"
+
             }
 
         }
