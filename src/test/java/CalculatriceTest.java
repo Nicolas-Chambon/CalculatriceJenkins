@@ -41,7 +41,7 @@ public class CalculatriceTest {
     }
 
     @Test(expected = ArithmeticException.class)
-    public void testDivideWillThrowExceptionWhenDivideOnZero() {
+    public void testDivideByZero() {
         Calculatrice calculator = new Calculatrice();
         calculator.divide(6, 0);
     }
