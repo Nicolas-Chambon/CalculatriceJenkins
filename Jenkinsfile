@@ -7,17 +7,17 @@ pipeline {
         }
     }
     stages {
-        stage('Build') {
-            steps {
-                sh 'mvn -B -DskipTests clean package'
-            }
-        }
         stage('Test') {
             steps {
                 sh 'mvn test'
             }
         }
-        stage('Sonar') {
+        stage('Build') {
+            steps {
+                sh 'mvn -B -DskipTests clean package'
+            }
+        }
+        stage('Code Quality') {
             steps {
                 sh 'mvn sonar:sonar -Dsonar.projectKey=calculatrice-java -Dsonar.host.url=http://thedawndev.fr:9001 -Dsonar.login=fc9c79729b0dfa3d195d3966bd6e354cba9ec73d'
             }
